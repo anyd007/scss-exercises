@@ -12,11 +12,27 @@
     transition: all 0.5s ease-in-out;
 }
 
+@mixin media-md {
+    @media screen and (min-width: 786px){
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 1200px){
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1600px){
+        @content;
+    }
+}
+
 @function set-text-color($color){
     @if (lightness($color)>40%){
         @return #000;
     }
     @else{
-        @return #fff
+        @return #fff;
     }
 }
