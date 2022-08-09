@@ -1,8 +1,8 @@
-@import './config', './home';
+@import './config', './home', './menu', './about', './projects';
 
 body{
     background: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1;
@@ -13,8 +13,12 @@ h1, h2, h3{
 }
 
 a{
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
+}
+
+.text-secendery{
+    color: $secendery-color;
 }
 header{
     position: fixed;
@@ -34,6 +38,7 @@ main{
 
         a{
             padding: 0.4rem;
+            @include transition-ease;
 
             &:hover{
                 color: $secendery-color;
@@ -49,5 +54,5 @@ footer{
     right: 1rem;
     text-align: right;
     padding: 1rem;
-    color: #fff;
+    color: set-text-color($primary-color);
 }
